@@ -259,6 +259,9 @@ const ProfilePage = () => {
   const { projects, setProjects } = useContext(positionSideContext);
   const { setData, setProject } = UseData();
 
+  const fecha = new Date()
+  const hora_actual = fecha.getHours()  
+
   useEffect(() => {
     const fetchProjects = async () => {
       try {
@@ -338,6 +341,7 @@ const ProfilePage = () => {
           {name}
           <MessageText>
             Good Night {(name & name !== "") ? name : "User"}
+            Time: {hora_actual}
           </MessageText>
           <MessageSecond>
             Continue Your Journey And Archive
