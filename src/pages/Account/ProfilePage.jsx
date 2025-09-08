@@ -73,6 +73,7 @@ const MessageText = styled.p`
   margin-top: 1rem;
   color: black;
   font-size: 1.1rem;
+  text-align: center;
 `
 const MessageSecond = styled.p`
   color: black;
@@ -260,7 +261,8 @@ const ProfilePage = () => {
   const { setData, setProject } = UseData();
 
   const fecha = new Date()
-  const hora_actual = fecha.getHours()  
+  const hora_actual = fecha.getHours()
+  const minute_actual = fecha.getMinutes() 
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -338,10 +340,10 @@ const ProfilePage = () => {
         </MainCore>
         <Profile>
           <LogoImg src={profileImg} />
-          {name}
           <MessageText>
-            Good Night {(name & name !== "") ? name : "User"}
-            Time: {hora_actual}
+            Good Night {(name) ? name : "User"}
+            <br />
+            Time: {hora_actual}:{minute_actual}
           </MessageText>
           <MessageSecond>
             Continue Your Journey And Archive

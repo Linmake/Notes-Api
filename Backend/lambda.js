@@ -1,7 +1,6 @@
 import express from "express";
-import connectDB from "./Backend/DB/data-base.db.js";
+import connectDB from "./DB/data-base.db.js";
 import dotenv from "dotenv";
-import { createServer } from "http";
 import cors from 'cors';
 import FileRouter from "./Routes/file.routes.js";
 import FolderRouter from "./Routes/folder.routes.js";
@@ -9,24 +8,27 @@ import ProjectRouter from "./Routes/project.routes.js";
 import AccountRouter from "./Routes/account.routes.js";
 import AssitantRouter from "./Routes/assistant.routes.js";
 import cookieParser from "cookie-parser";
-import ServerlessHttp from "serverless-http";
+import serverless from "serverless-http";
 
-// Configuración de dotenv
-
+// Configuración
 dotenv.config();
+
+// Crear la app Express
 const App = express();
-connectDB();  
 
-const server = createServer(App);
- 
+// Conectar a la base de datos
+// IMPORTANTE: En Lambda, las conexiones a DB deben manejarse con cuidado
+// porque Lambda reutiliza el entorno (conexiones persistentes)
+connectDB();
+
 // Middlewares
-
 App.use(cookieParser());
 App.use(express.json());
 
-
 const allowedOrigins = [
   'http://localhost:3000',
+  // Aquí debes agregar también tu dominio de producción frontend
+  // ej: 'https://mi-app-frontend.vercel.app'
 ];
 
 App.use(cors({
@@ -37,8 +39,8 @@ App.use(cors({
       callback(new Error('Not allowed by CORS'));
     }
   },
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Permite solo estos métodos HTTP
-  allowedHeaders: ['Content-Type', 'Authorization'], // Permite solo estos encabezados
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
 }));
 
@@ -47,13 +49,15 @@ App.use("/file", FileRouter);
 App.use("/folder", FolderRouter);
 App.use("/project", ProjectRouter);
 App.use("/account", AccountRouter);
-App.use("/assistant", AssitantRouter)
+App.use("/assistant", AssitantRouter);
 
-const portUrl = process.env.VITE_API_PORT;
-
-server.listen(portUrl, () => {
-  console.log(`Servidor levantado en el puerto ${portUrl}`)
+// Manejo de rutas no encontradas (importante para Lambda)
+App.use((req, res) => {
+  res.status(404).json({ error: "Ruta no encontrada" });
 });
 
-export const handler = ServerlessHttp(App);
+// Exportar el handler para Lambda
+export const handler = serverless(App);
+
+// Opcional: exportar para pruebas locales
 export default App;
