@@ -1,8 +1,9 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Backend for Lumia Pina Notes on AWS Lambda",
+  "main": "lambda.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +11,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@vendia/serverless-express": "^4.12.6",
+    "axios": "^1.11.0",
+    "bcrypt": "^6.0.0",
+    "body-parser": "^2.2.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
     "express": "^5.1.0",
-    "mongoose": "^8.18.0"
+    "express-rate-limit": "^8.1.0",
+    "jose": "^6.1.0",
+    "mongodb": "^6.19.0",
+    "mongoose": "^8.18.1",
+    "serverless-http": "^4.0.0",
+    "uuid": "^13.0.0"
   }
 }

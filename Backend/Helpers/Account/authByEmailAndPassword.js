@@ -1,5 +1,5 @@
 import { compare } from 'bcrypt'
-import Account from '../../Schema/AccountSchema.js'
+import Account from '../../Backend/Schema/AccountSchema.js'
 const authByEmailAndPassword = async(Email, Password) => {
     const account = await Account.findOne({ Email: Email })
     if(!account) return res.status(401).send("Incorrect credentials")

@@ -1,3 +1,35 @@
+
+// === DIAGNÓSTICO INICIAL - DEBE IR PRIMERO === //
+console.log('🔍 LAMBDA INICIADA - Diagnóstico');
+console.log('Tiempo:', new Date().toISOString());
+console.log('DB_URL exists:', !!process.env.DB_URL);
+console.log('DB_URL value:', process.env.DB_URL ? '***REDACTED***' : 'UNDEFINED');
+console.log('NODE_ENV:', process.env.NODE_ENV);
+
+// Test de módulos críticos
+try {
+    // Test de importación dinámica
+    const express = await import('express');
+    console.log('✅ Express module found');
+} catch (e) {
+    console.log('❌ Express module MISSING:', e.message);
+}
+
+try {
+    const mongoose = await import('mongoose');
+    console.log('✅ Mongoose module found');
+} catch (e) {
+    console.log('❌ Mongoose module MISSING:', e.message);
+}
+
+try {
+    const serverlessHttp = await import('serverless-http');
+    console.log('✅ Serverless-http module found');
+} catch (e) {
+    console.log('❌ Serverless-http module MISSING:', e.message);
+}
+// === FIN DIAGNÓSTICO === //
+
 import express from "express";
 import connectDB from "./DB/data-base.db.js";
 import dotenv from "dotenv";

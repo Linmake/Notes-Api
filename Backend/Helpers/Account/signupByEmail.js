@@ -1,5 +1,5 @@
 import { hash } from 'bcrypt'
-import Account from '../../Schema/AccountSchema.js'
+import Account from '../../Backend/Schema/AccountSchema.js'
 import { v4 as uuidv4 } from 'uuid'
 export const signupByEmail = async( body ) => {
 		const { Email, Password, Name } = body

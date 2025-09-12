@@ -1,7 +1,7 @@
 
 import Folder from "../../Schema/FolderSchema.js";
 import Project from "../../Schema/ProjectSchema.js";
-import { getDate } from "../../src/components/sidebar/Hooks/date.js";
+import { getDate } from "../../../src/components/sidebar/Hooks/date.js";
 
 const editController = async (req, res) => {
   try {
