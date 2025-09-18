@@ -58,7 +58,7 @@ App.use(cookieParser());
 App.use(express.json());
 
 const allowedOrigins = [
-  'http://localhost:3000',
+  'http://localhost:4000',
   // Aquí debes agregar también tu dominio de producción frontend
   // ej: 'https://mi-app-frontend.vercel.app'
 ];
