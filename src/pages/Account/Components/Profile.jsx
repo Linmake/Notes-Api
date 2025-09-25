@@ -1,7 +1,8 @@
-import styled from "styled-components"
-import profileImg from "../../assets/people.png";
+﻿import styled from "styled-components"
+import profileImg from "../../../assets/people.png";
 import { faBell, faInbox, faTrophy } from "@fortawesome/free-solid-svg-icons";
 import { UseData } from "../../../context/dataContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // ← Ruta corregida
 
 const Container = styled.div`
   position: absolute;
@@ -12,14 +13,13 @@ const Container = styled.div`
   height: 100%;
   align-items: center;
   padding-top: 6%;
-  background-color: #fffff;
+  background-color: #ffffff; // ← También corregí #fffff a #ffffff
   color: #1d2936ff;
   font-size: 1.5rem;
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
   box-shadow: rgba(158, 162, 165, 0.2) 0px 8px 24px;
 `;
-
 const LogoImg = styled.img`
   border: 1px solid #bebebe;
   border-radius: 55%;
@@ -27,13 +27,13 @@ const LogoImg = styled.img`
   height: 72px;
   box-sizing: border-box;
 `;
-
 const MessageText = styled.p`
   margin-top: 1rem;
   color: black;
   font-size: 1.1rem;
   text-align: center;
 `
+
 const MessageSecond = styled.p`
   color: black;
   font-size: 0.8rem;
@@ -55,7 +55,6 @@ const Icons1 = styled.div`
   justify-content: center;
   align-items: center;
 `
-
 const IconsFont = styled(FontAwesomeIcon)`
   font-size: 1.4rem;
 `

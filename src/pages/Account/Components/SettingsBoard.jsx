@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCog, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components"
 
 const SettingSect = styled.div`
@@ -14,7 +15,6 @@ const SettingsText = styled.p`
   font-size: 1.2rem;
   font-weight: bold;
 `
-
 const SettingContent = styled.div`
   display: flex;
   justify-content: center;
