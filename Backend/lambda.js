@@ -59,11 +59,11 @@ App.use(cors({
 }));
 
 // Rutas
-App.use("/file", FileRouter);
+//App.use("/file", FileRouter);
 App.use("/folder", FolderRouter);
-App.use("/project", ProjectRouter);
-App.use("/account", AccountRouter);
-App.use("/assistant", AssitantRouter);
+//App.use("/project", ProjectRouter);
+//App.use("/account", AccountRouter);
+//App.use("/assistant", AssitantRouter);
 
 // Ruta de salud
 App.get("/health", (req, res) => {
