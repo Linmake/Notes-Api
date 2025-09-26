@@ -1,35 +1,3 @@
-
-// === DIAGNÓSTICO INICIAL - DEBE IR PRIMERO === //
-console.log('🔍 LAMBDA INICIADA - Diagnóstico');
-console.log('Tiempo:', new Date().toISOString());
-console.log('DB_URL exists:', !!process.env.DB_URL);
-console.log('DB_URL value:', process.env.DB_URL ? '***REDACTED***' : 'UNDEFINED');
-console.log('NODE_ENV:', process.env.NODE_ENV);
-
-// Test de módulos críticos
-try {
-    // Test de importación dinámica
-    const express = await import('express');
-    console.log('✅ Express module found');
-} catch (e) {
-    console.log('❌ Express module MISSING:', e.message);
-}
-
-try {
-    const mongoose = await import('mongoose');
-    console.log('✅ Mongoose module found');
-} catch (e) {
-    console.log('❌ Mongoose module MISSING:', e.message);
-}
-
-try {
-    const serverlessHttp = await import('serverless-http');
-    console.log('✅ Serverless-http module found');
-} catch (e) {
-    console.log('❌ Serverless-http module MISSING:', e.message);
-}
-// === FIN DIAGNÓSTICO === //
-
 import express from "express";
 import connectDB from "./DB/data-base.db.js";
 import dotenv from "dotenv";
@@ -40,7 +8,10 @@ import ProjectRouter from "./Routes/project.routes.js";
 import AccountRouter from "./Routes/account.routes.js";
 import AssitantRouter from "./Routes/assistant.routes.js";
 import cookieParser from "cookie-parser";
-import serverless from "serverless-http";
+
+console.log("🔍 Variables de entorno:");
+console.log("DB_URL:", process.env.DB_URL);
+console.log("NODE_ENV:", process.env.NODE_ENV);
 
 // Configuración
 dotenv.config();
@@ -49,8 +20,6 @@ dotenv.config();
 const App = express();
 
 // Conectar a la base de datos
-// IMPORTANTE: En Lambda, las conexiones a DB deben manejarse con cuidado
-// porque Lambda reutiliza el entorno (conexiones persistentes)
 connectDB();
 
 // Middlewares
@@ -58,7 +27,7 @@ App.use(cookieParser());
 App.use(express.json());
 
 const allowedOrigins = [
-  'http://localhost:4000',
+  'http://localhost:3000',
   // Aquí debes agregar también tu dominio de producción frontend
   // ej: 'https://mi-app-frontend.vercel.app'
 ];
@@ -83,13 +52,36 @@ App.use("/project", ProjectRouter);
 App.use("/account", AccountRouter);
 App.use("/assistant", AssitantRouter);
 
-// Manejo de rutas no encontradas (importante para Lambda)
+// Ruta de salud para verificar que el servidor está funcionando
+App.get("/health", (req, res) => {
+  res.status(200).json({ 
+    status: "OK", 
+    message: "Servidor funcionando correctamente",
+    timestamp: new Date().toISOString()
+  });
+});
+
+// Manejo de rutas no encontradas
 App.use((req, res) => {
   res.status(404).json({ error: "Ruta no encontrada" });
 });
 
-// Exportar el handler para Lambda
-export const handler = serverless(App);
+// Manejo de errores global
+App.use((error, req, res, next) => {
+  console.error("Error del servidor:", error);
+  res.status(500).json({ 
+    error: "Error interno del servidor",
+    message: error.message 
+  });
+});
 
-// Opcional: exportar para pruebas locales
+// Iniciar el servidor (solo si no estamos en entorno de test)
+if (process.env.NODE_ENV !== 'test') {
+  const PORT = process.env.PORT || 3001;
+  App.listen(PORT, () => {
+    console.log(`🚀 Servidor ejecutándose en el puerto ${PORT}`);
+    console.log(`📍 Ambiente: ${process.env.NODE_ENV || 'development'}`);
+  });
+}
+
 export default App;
