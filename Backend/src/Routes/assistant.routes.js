@@ -1,6 +1,6 @@
 import express from "express";
-import { resumeAssistantController } from '../Controllers/Assitant/resume.controller.js';
-import { testController } from "../Controllers/Assitant/test.controller.js";
+import { resumeAssistantController } from '../src/Controllers/Assitant/resume.controller.js';
+import { testController } from "../src/Controllers/Assitant/test.controller.js";
 
 const AssitantRouter = express.Router(); 
 
