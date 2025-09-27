@@ -2,11 +2,12 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Backend for Lumia Pina Notes on AWS Lambda",
-  "main": "lambda.js",
+  "main": "src/lambda.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon /lambda.js"
+    "start": "node src/lambda.js",
+    "dev": "nodemon src/lambda.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
