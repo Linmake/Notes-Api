@@ -1,4 +1,4 @@
-import authByEmailPwd from '../helpers/authByEmailPwd'
+import authByEmailPwd from '../Helpers/authByEmailPwd'
 import express from 'express'
 
 const AuthenticationRouter = express.Router()

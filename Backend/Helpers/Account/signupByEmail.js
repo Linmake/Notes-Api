@@ -1,8 +1,7 @@
-<<<<<<< HEAD:Helpers/Account/signupByEmail.js
 import { hash } from 'bcrypt'
-
 import { v4 as uuidv4 } from 'uuid'
 import Account from '../../Schema/AccountSchema.js'
+
 export const signupByEmail = async( body ) => {
 		const { Email, Password, Name } = body
 		const existAccount = await Account.findOne({ Email: Email })
@@ -17,24 +16,3 @@ export const signupByEmail = async( body ) => {
         })
 		return account
 }
-=======
-import { hash } from 'bcrypt'
-
-import { v4 as uuidv4 } from 'uuid'
-import Account from '../Schema/AccountSchema.js'
-export const signupByEmail = async( body ) => {
-		const { Email, Password, Name } = body
-		const existAccount = await Account.findOne({ Email: Email })
-        if (existAccount) return res.status(401).send(`Account with Email: ${Email} already exists`)
-        const hashPassword = await hash(Password, 8)
-        const account = new Account({
-            Id: uuidv4(),
-            Name,
-            Password: hashPassword,
-            Email, 
-            Role: "User"
-        })
-		return account
-
-}
->>>>>>> 222e6553e7ec0b346ea9b78ec6b35425247afa8e:src/Helpers/Account/signupByEmail.js
