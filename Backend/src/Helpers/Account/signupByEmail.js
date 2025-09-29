@@ -1,7 +1,7 @@
 import { hash } from 'bcrypt'
-
 import { v4 as uuidv4 } from 'uuid'
 import Account from '../../Schema/AccountSchema.js'
+
 export const signupByEmail = async( body ) => {
 		const { Email, Password, Name } = body
 		const existAccount = await Account.findOne({ Email: Email })

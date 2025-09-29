@@ -1,5 +1,4 @@
 import Project from "../../Schema/ProjectSchema.js";
-
 const editFolderInsideController = async (req, res) => {
     try {
       const { ProjectId, FolderId } = req.params;

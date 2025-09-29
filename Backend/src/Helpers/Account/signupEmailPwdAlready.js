@@ -1,4 +1,5 @@
 import Account from '../../Schema/AccountSchema.js'
+
 /**
  * @param {Object} body 
  * @returns Account

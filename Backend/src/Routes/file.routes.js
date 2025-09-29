@@ -1,7 +1,7 @@
+
 import Express from "express"
 import FileValidation from "../DTO/FileValidation.js"
 import getAllFilesController from '../Controllers/File/getAll.controller.js'
-import getFileByProjectController from '../Controllers/File/getAllByProject.controller.js'
 import getFileController from '../Controllers/File/get.controller.js'
 import createController from '../Controllers/File/create.controller.js'
 import editTitleController from '../Controllers/File/editTitle.controller.js'

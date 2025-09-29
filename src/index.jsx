@@ -5,6 +5,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
+import './polyfills'
 import { SideProv } from './context/SideProv.jsx';
 import { DataProvider } from './context/dataContext.jsx';
 import { EditorProvider } from './context/editorFunctions.jsx';

@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components"
 
 const SearchContainer = styled.div`
