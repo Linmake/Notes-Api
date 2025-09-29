@@ -222,7 +222,7 @@ const FolderList = () => {
 
   const handlerDelete = async (FolderId) => {
     const { status } = await axios.delete(
-      `http://localhost:4000/folder/delete/${projectId}/${FolderId}`
+      `https://backend-lumiapina-production.up.railway.app/folder/delete/${projectId}/${FolderId}`
     );
     if (!status) return;
     const currentFolders = folders.filter((folder) => folder.Id !== FolderId);
@@ -238,7 +238,7 @@ const FolderList = () => {
   const handlerSaveRename = async (event, FolderId) => {
     if (event.keyCode !== 13) return;
     const { status } = await axios.put(
-      `http://localhost:4000/folder/edit/${projectId}/${FolderId}`,
+      `https://backend-lumiapina-production.up.railway.app/folder/edit/${projectId}/${FolderId}`,
       { Title: newTitle },
       { withCredentials: true }
     );

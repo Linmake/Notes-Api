@@ -12,7 +12,7 @@ import { DndContext } from '@dnd-kit/core';
 
 const getProjects = async () => {
   try {
-    const { data } = await axios.get(`http://localhost:4000/project/all`, {withCredentials: true});
+    const { data } = await axios.get(`https://backend-lumiapina-production.up.railway.app/project/all`, {withCredentials: true});
     return data;
   } catch (error) {
     console.error(error);

@@ -59,7 +59,7 @@ const AIINte = () => {
         setResponse('');
 
         try {
-            const res = await axios.post("http://localhost:4000/assistant/resume", {
+            const res = await axios.post("https://backend-lumiapina-production.up.railway.app/assistant/resume", {
                 text: fileCurrent.Text,
                 sessionId: fileCurrent?.id || 'default-session',
                 sheets: sheets

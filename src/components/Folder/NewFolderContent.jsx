@@ -76,7 +76,7 @@ const NewFolderContent = () => {
     };
     try {
       const resFolders = await axios.post(
-        `http://localhost:4000/folder/create`,
+        `https://backend-lumiapina-production.up.railway.app/folder/create`,
         newFolder,
         {withCredentials: true}
       );
@@ -113,7 +113,7 @@ const NewFolderContent = () => {
         };
 
         const resFolders = await axios.post(
-          `http://localhost:4000/folder/create`,
+          `https://backend-lumiapina-production.up.railway.app/folder/create`,
           newFolder,
           {withCredentials: true}
         );

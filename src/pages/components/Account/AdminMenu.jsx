@@ -58,7 +58,7 @@ const AdminMenuComponent = () => {
     const { data, setOpenFolder, folders, setFolders, setFiles } = UseData();
       const { projects, setProjects } = useContext(positionSideContext);
     const handlerDeleteProyects = async(e) => {
-     const { status } = await axios.delete("http://localhost:4000/project/all/delete", {withCredentials: true})
+     const { status } = await axios.delete("https://backend-lumiapina-production.up.railway.app/project/all/delete", {withCredentials: true})
      if(status !== 200) {
         return
      }
@@ -66,7 +66,7 @@ const AdminMenuComponent = () => {
      return setProjects([])
     }
     const handlerDeleteFolders = async(e) => {
-     const { status } = await axios.delete("http://localhost:4000/folder/all/delete", {withCredentials: true})
+     const { status } = await axios.delete("https://backend-lumiapina-production.up.railway.app/folder/all/delete", {withCredentials: true})
      if(status !== 200) {
         return
      }
@@ -74,7 +74,7 @@ const AdminMenuComponent = () => {
      return setFolders([])
     }
     const handlerDeleteFiles = async(e) => {
-     const { status } = await axios.delete("http://localhost:4000/file/all/delete", {withCredentials: true})
+     const { status } = await axios.delete("https://backend-lumiapina-production.up.railway.app/file/all/delete", {withCredentials: true})
      if(status !== 200) {
         return
      }
