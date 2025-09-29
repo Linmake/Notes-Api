@@ -66,7 +66,7 @@ const LogoutBtn = styled.button`
 const ToggleAccount = () => {
   const { setLogin } = UseData();
   const handlerLogout = async () => {
-    await axios.get("http://localhost:4000/account/logout", {
+    await axios.get("https://backend-lumiapina-production.up.railway.app/account/logout", {
       withCredentials: true,
     });
     setLogin(false);

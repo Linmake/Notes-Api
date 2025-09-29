@@ -7,7 +7,7 @@ const SignUp = async(email, pwd, name) => {
         Password: pwd,
         Name: name,
       }
-      const res = await axios.post("http://localhost:4000/account/signup", account, {
+      const res = await axios.post("https://backend-lumiapina-production.up.railway.app/account/signup", account, {
         withCredentials: true
     })  
       return res

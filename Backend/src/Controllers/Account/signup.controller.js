@@ -1,6 +1,6 @@
-import authToken from '../../Routes/auth_token.js'
+import authToken from './../../Routes/auth_token.js'
 import cookieAuth from './cookie/cookieAuth.js'
-import { signupByEmail } from '../../Helpers/Account/signupByEmail.js'
+import { signupByEmail } from './../../Helpers/Account/signupByEmail.js'
 const signupController = async( req, res ) => {
     try{
         const account = await signupByEmail(req.body)

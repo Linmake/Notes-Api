@@ -142,7 +142,7 @@ const NameAccount = () => { //ponerle un load al componente para atrapar el err 
 
   const {email, setName, pwd, name } = UseData()
   const navigate = useNavigate()
-  const baseUrl = "http://localhost:4000/"
+  const baseUrl = "https://backend-lumiapina-production.up.railway.app/"
   
   const path = window.location.pathname
   const segmentsPath = path.split('/').filter(Boolean)

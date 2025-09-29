@@ -141,7 +141,7 @@ const SignInAccount = () => {
       Email: email,
       Password: pwd,
     };
-    const res = await axios.post("http://localhost:4000/account/signin", body, { withCredentials: true })
+    const res = await axios.post("https://backend-lumiapina-production.up.railway.app/account/signin", body, { withCredentials: true })
     const data = res.data;
     setName(data.Name)
     // const query = window.location.search;

@@ -130,14 +130,7 @@ const TitleH1 = styled.h1`
   color: #202020;
   font-size: 1.5rem;
 `;
-const PwdAccount = () => { //ponerle un load al componente para atrapar el err de que si no hya email previo redirigir a account/signup/email
-
-  /*
-  const signup = () => {
-    const DBUrl = "http://localhost:3000"
-    axios.post( `${DBUrl}/account/create` )
-  }
-  */
+const PwdAccount = () => {
  const { setPwd, email } = UseData()
  const navigate = useNavigate()
  

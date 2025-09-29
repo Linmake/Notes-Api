@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-import { FileSchema } from './FileSchema.js'
 
 const { Schema } = mongoose;
 

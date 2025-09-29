@@ -58,14 +58,14 @@ const Account = ({mainRoute, marginleft, gap }) => {
 
   useEffect(() => {
     const fetchAccount = async () => {
-      const { data } = await axios.get("http://localhost:4000/account/login", {
+      const { data } = await axios.get("https://backend-lumiapina-production.up.railway.app/account/login", {
         withCredentials: true,
       });
       const { Name } = data;
       setName(Name);
     };
     const fetchJWT = async () => {
-      const res = await axios.get("http://localhost:4000/account/token", {
+      const res = await axios.get("https://backend-lumiapina-production.up.railway.app/account/token", {
         withCredentials: true,
       });
       const { status } = res.data;
@@ -79,7 +79,7 @@ const Account = ({mainRoute, marginleft, gap }) => {
   }, [setLogin, setName]);
 
   const handlerLogout = async () => {
-    await axios.get("http://localhost:4000/account/logout", {
+    await axios.get("https://backend-lumiapina-production.up.railway.app/account/logout", {
       withCredentials: true,
     });
     setLogin(false);

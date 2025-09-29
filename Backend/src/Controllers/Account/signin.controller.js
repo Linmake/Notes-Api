@@ -1,6 +1,6 @@
-import authToken from "../../Routes/auth_token.js"
+import authToken from "./../../Routes/auth_token.js"
 import cookieAuth from "./cookie/cookieAuth.js"
-import authByEmailAndPassword from "../Helpers/Account/authByEmailAndPassword.js"
+import authByEmailAndPassword from "../../Helpers/Account/authByEmailAndPassword.js"
 const signinController = async(req, res) => {
     try{
         const {Email, Password} = req.body

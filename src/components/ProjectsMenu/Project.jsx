@@ -161,7 +161,7 @@ const Project = ({ Title, Id }) => {
 
   const handlerDelete = async (e) => {
     const { status } = await axios.delete(
-      `http://localhost:4000/project/delete/${Id}, {withCredentials: true}`
+      `https://backend-lumiapina-production.up.railway.app/project/delete/${Id}, {withCredentials: true}`
     );
     if (!status) return;
     const currentProjects = projects.filter((project) => project.Id !== Id);
@@ -180,7 +180,7 @@ const Project = ({ Title, Id }) => {
   const handlerSaveEdit = async (event) => {
     if (event.keyCode !== 13) return;
     const { status } = await axios.put(
-      `http://localhost:4000/project/edit/${Id}`,
+      `https://backend-lumiapina-production.up.railway.app/project/edit/${Id}`,
       { Title: newTitle }, { withCredentials: true }
     );
     if (status !== 200) console.info("project no guardado");

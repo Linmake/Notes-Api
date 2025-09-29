@@ -50,7 +50,7 @@ export const NewProjectTab = () => {
       UserId: UserId
     };
     try {
-      const res = await axios.post("http://localhost:4000/project/create", newProyect, {withCredentials: true});
+      const res = await axios.post("https://backend-lumiapina-production.up.railway.app/project/create", newProyect, {withCredentials: true});
       setProjects(prevProjects => [...prevProjects, newProyect]);
       refName.current.value = ""
       return res;

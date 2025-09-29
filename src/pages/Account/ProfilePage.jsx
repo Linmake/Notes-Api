@@ -78,7 +78,7 @@ const ProfilePage = () => {
     const fetchProjects = async () => {
       try {
         setCookie(document.cookie);
-        const { data } = await axios.get(`http://localhost:4000/project/all`, { withCredentials: true });
+        const { data } = await axios.get(`https://backend-lumiapina-production.up.railway.app/project/all`, { withCredentials: true });
         setProjects(data);
       } catch (error) {
         console.error("Error fetching projects:", error);

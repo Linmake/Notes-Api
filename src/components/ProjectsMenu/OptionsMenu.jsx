@@ -39,7 +39,7 @@ const OptionsMenu = ({ Title, Id }) => {
     const { projects, setProjects } = useContext(positionSideContext);
 
     const handlerDelete = async (e) => {
-        const { status } = await axios.delete(`http://localhost:4000/project/delete/${Id}`, {withCredentials: true})
+        const { status } = await axios.delete(`https://backend-lumiapina-production.up.railway.app/project/delete/${Id}`, {withCredentials: true})
         if (!status) return
         const currentProjects = projects.filter(project => project.Id !== Id)
         setProjects(currentProjects)

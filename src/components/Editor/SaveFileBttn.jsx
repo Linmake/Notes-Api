@@ -52,7 +52,7 @@ const SaveFileBttn = ({ quillRef }) => {
 
     try {
       const editText = await axios.put(
-        "http://localhost:4000/file/edit-text/",
+        "https://backend-lumiapina-production.up.railway.app/file/edit-text/",
         { Text: currentText, Id: fileCurrent.Id },
         { withCredentials: true }
       );
@@ -66,7 +66,7 @@ const SaveFileBttn = ({ quillRef }) => {
       }
 
       const getFolders = await axios.get(
-        `http://localhost:4000/folder/all/${folder.ProjectId}`,
+        `https://backend-lumiapina-production.up.railway.app/folder/all/${folder.ProjectId}`,
         { withCredentials: true }
       );
 
@@ -75,7 +75,7 @@ const SaveFileBttn = ({ quillRef }) => {
       setFileCurrent(newFile);
 
       const { data } = await axios.get(
-        `http://localhost:4000/file/all/${idFolderSelect}`,
+        `https://backend-lumiapina-production.up.railway.app/file/all/${idFolderSelect}`,
         { withCredentials: true }
       );
 

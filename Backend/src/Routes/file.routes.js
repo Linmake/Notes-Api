@@ -1,15 +1,15 @@
 
 import Express from "express"
-import FileValidation from "../DTO/FileValidation.js"
-import getAllFilesController from '../Controllers/File/getAll.controller.js'
-import getFileController from '../Controllers/File/get.controller.js'
-import createController from '../Controllers/File/create.controller.js'
-import editTitleController from '../Controllers/File/editTitle.controller.js'
-import editTextController from '../Controllers/File/editText.controller.js'
-import deleteAllFilesController from '../Controllers/File/deleteAll.controller.js'
-import deleteAllByFolderController from '../Controllers/File/deleteAllByFolder.controller.js'
-import deleteController from '../Controllers/File/delete.controller.js'
-import userJWTDTO from "../DTO/userJWTDTO.js"
+import FileValidation from "./../DTO/FileValidation.js"
+import getAllFilesController from './../Controllers/File/getAll.controller.js'
+import getFileController from './../Controllers/File/get.controller.js'
+import createController from './../Controllers/File/create.controller.js'
+import editTitleController from './../Controllers/File/editTitle.controller.js'
+import editTextController from './../Controllers/File/editText.controller.js'
+import deleteAllFilesController from './../Controllers/File/deleteAll.controller.js'
+import deleteAllByFolderController from './../Controllers/File/deleteAllByFolder.controller.js'
+import deleteController from './../Controllers/File/delete.controller.js'
+import userJWTDTO from "./../DTO/userJWTDTO.js"
 
 const FileRouter = Express.Router()
 
