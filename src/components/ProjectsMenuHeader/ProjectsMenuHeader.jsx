@@ -26,10 +26,10 @@ const ProjectsMenuHeader = () => {
     const { name } = UseData();
     return (
         <HeaderContainer>
-                <MainLinks mainRoute={"http://localhost:3000"} />
+                <MainLinks mainRoute={"https://lumiapina.com"} />
             <AccountContainer>
                 <Account
-                    mainRoute={"http://localhost:3000"}
+                    mainRoute={"https://lumiapina.com"}
                     nameAccount={name}
                     gap={'1rem'}
                 />

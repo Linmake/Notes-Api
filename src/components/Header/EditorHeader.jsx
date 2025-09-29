@@ -123,7 +123,7 @@ const EditorHeader = () => {
             </ul>
           </li>
         </ListaInicio>
-        <Account mainRoute={"http://localhost:3000/"} gap={0} marginleft={0} />
+        <Account mainRoute={"https://lumiapina.com"} gap={0} marginleft={0} />
       </Header>
     </>
   )
