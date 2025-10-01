@@ -59,7 +59,7 @@ const ProjectsMenu = () => {
           <NoProjects />
         ) : (
           <ProjectCompTemplate> 
-            <MainHeader mainRoute={"http://localhost:3000"} />
+            <MainHeader mainRoute={"https://lumiapina.com"} />
             <ContainerProjects>
               <NewProjectTab />
               <ProjectList>

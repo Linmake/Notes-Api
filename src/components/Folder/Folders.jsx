@@ -141,7 +141,7 @@ const NewFileContainer = styled.div``;
 const FileContainer = styled.div``;
 
 const FolderList = () => {
-  const DbUrl = "http://localhost:4000";
+  const DbUrl = "https://backend-lumiapina-production.up.railway.app/";
   const { projectId } = useParams();
   const [optsMenu, setOptsMenu] = useState(false);
   const [edit, setEdit] = useState(false);

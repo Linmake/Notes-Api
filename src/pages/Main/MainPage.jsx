@@ -14,7 +14,7 @@ const media = {
 const MainPage = () => {
   return (
     <>
-      <MainHeader mainRoute={"http://localhost:3000"}/>
+      <MainHeader mainRoute={"https://lumiapina.com"}/>
       <MainContainer/>
       <CardsContainer/>                   
     </> 

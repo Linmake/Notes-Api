@@ -30,7 +30,8 @@ App.use(cookieParser());
 App.use(express.json());
 
 const allowedOrigins = [
-  'http://localhost:3000',
+  'https://lumiapina.com',
+
   // Aquí debes agregar también tu dominio de producción frontend
   // ej: 'https://mi-app-frontend.vercel.app'
 ];

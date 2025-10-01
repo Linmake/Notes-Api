@@ -73,7 +73,7 @@ const ContainerProject = () => {
     setAddNewFile,
     setAddNewFolder,
   } = useContext(positionSideContext); 
-  const DbUrl = "http://localhost:4000";
+  const DbUrl = "https://backend-lumiapina-production.up.railway.app/";
   const { projectId } = useParams()
   
   const {
