@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { CardBody, CardComponent } from "../../../components/HomeCards/Card";
 import styled from "styled-components";
 
-export default function CardsContainer() {
+const CardsContainer = () => {
   const ContainerCards = styled.div`
     width: 100vw;
     height: 100%;
@@ -33,3 +33,4 @@ export default function CardsContainer() {
       </ContainerCards>
   );
 }
+export default CardsContainer
