@@ -4,7 +4,7 @@
             "name": "Launch Chrome",
             "request": "launch",
             "type": "chrome",
-            "url": "https://lumiapina.com",
+            "url": "http://lumiapina.com",
             "webRoot": "${workspaceFolder}"
         },
         {

@@ -104,7 +104,7 @@ const EditorHeader = () => {
         <ListaInicio className="navbar-nav me-auto mb-2 mb-lg-0" id='navbarSection1'>
           <li className="nav-item">
             <ButtonInicio aria-expanded="false" role="menuitem">
-              <LinkInicio className="nav-link active" aria-current="page" href="https://lumiapina.com/">
+              <LinkInicio className="nav-link active" aria-current="page" href="https://lumiapina.com">
                 Home
               </LinkInicio>
             </ButtonInicio>
@@ -122,7 +122,7 @@ const EditorHeader = () => {
             </ul>
           </li>
         </ListaInicio>
-        <Account mainRoute={"https://lumiapina.com/"} gap={0} marginleft={0} />
+        <Account mainRoute={"https://lumiapina.com"} gap={0} marginleft={0} />
       </Header>
     </>
   )
