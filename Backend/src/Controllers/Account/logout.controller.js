@@ -1,4 +1,4 @@
-import Account from "../../Schema/AccountSchema.js"
+import Account from "./../../Schema/AccountSchema.js"
 import { decodeJwt } from "jose"
 const logoutController = async(req, res) => {
     try{

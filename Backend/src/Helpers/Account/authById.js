@@ -1,4 +1,4 @@
-import Account from '../../Schema/AccountSchema'
+import Account from './../../Schema/AccountSchema.js'
 
 const authById = async(body) => {
     const { Id } = body

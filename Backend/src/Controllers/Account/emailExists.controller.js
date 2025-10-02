@@ -1,6 +1,4 @@
-import { compare } from "bcrypt"
-import Account from "../../Schema/AccountSchema.js"
-import { decodeJwt } from "jose"
+import Account from "./../../Schema/AccountSchema.js"
 
 const emailExistsController = async(req, res)=> {
     const { Email } = req.body
