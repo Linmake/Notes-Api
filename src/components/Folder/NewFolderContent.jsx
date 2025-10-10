@@ -74,6 +74,7 @@ const NewFolderContent = () => {
       Files: [],
       UserId: UserId,
     };
+    console.log(project.Id)
     try {
       const resFolders = await axios.post(
         `https://backend-lumiapina-production.up.railway.app/folder/create`,
