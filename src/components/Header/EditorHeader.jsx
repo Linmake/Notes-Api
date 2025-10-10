@@ -49,7 +49,6 @@ const Header = styled.nav`
   @media (min-width: ${breakpoints.xxl}) {
     
   }
-  
   `
 const ListaInicio = styled.ul`
   margin-left: 72px;

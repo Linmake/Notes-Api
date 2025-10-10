@@ -44,7 +44,7 @@ const ButtonFirst = styled.button`
   }
 `
 
-export default function HomeContainer() {
+const HomeContainer = () => {
     const navigate = useNavigate()
   
     const handlerNavigate = () => {
@@ -69,3 +69,5 @@ export default function HomeContainer() {
       </ContainerInicio>
   )
 }
+
+export default HomeContainer

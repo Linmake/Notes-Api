@@ -16,7 +16,7 @@ const MainPage = () => {
     <>
       <MainHeader mainRoute={"https://lumiapina.com"}/>
       <MainContainer/>
-      <CardsContainer/>                   
+      <CardsContainer/>               
     </> 
   )
 }
