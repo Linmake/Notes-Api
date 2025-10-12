@@ -1,6 +1,9 @@
 [build]
-  publish = "dist"  # 👈 Agrega esta línea
-  command = "npm run build"  # 👈 Y esta
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  GIT_SUBMODULE_STRATEGY = "none"
 
 [[redirects]]
   from = "/*"
