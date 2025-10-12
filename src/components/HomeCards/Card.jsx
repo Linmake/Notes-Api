@@ -5,6 +5,15 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
+const breakpoints = {
+  xsm: "376px",
+  sm: "576px",  // móviles horizontales / tablets pequeñas
+  md: "768px",  // tablets verticales
+  lg: "905px",  // laptops pequeñas
+  xl: "1200px", // pantallas grandes
+  xxl: "1400px", // TVs/monitores extra grandes
+};
+
 const Article = styled.article`
   width: 320px;
   height: 380px;
@@ -13,6 +22,7 @@ const Article = styled.article`
   background-color: #FFF;
   padding: 1%;
   border-radius: 0.3rem;
+  
   &:hover {
     cursor: pointer;
     box-shadow: 0px 0px 6px rgba(168, 168, 168, 0.78);
@@ -23,12 +33,44 @@ const Article = styled.article`
     box-shadow: 0px 0px 6px rgba(168, 168, 168, 0.78);
     background-color: rgba(253, 253, 253);
   }
+  
   @media (min-width: 300px) and (max-width: 550px) {
-  width: 200px;
-  height: 250px;
-  padding: 0%;
+    width: 200px;
+    height: 250px;
+    padding: 0%;
+  }
+
+  @media (min-width: ${breakpoints.xsm}) {
+    width: 200px;
+    height: 250px;
+    padding: 0%;
+  }
+
+  @media (min-width: ${breakpoints.sm}) { 
+    width: 200px;
+    height: 250px;
+    padding: 0%;
+  }
+
+/* Tablet (≥ 768px) */
+  @media (min-width: ${breakpoints.md}) {
+    
+  }
+
+/* Desktop (≥ 905px) */
+  @media (min-width: ${breakpoints.lg}) {
+    width: 250px;
+  }
+
+  @media (min-width: ${breakpoints.xl}) {
+
+  }
+
+  @media (min-width: ${breakpoints.xxl}) {
+
   }
 `;
+
 const Section = styled.section`
   width: 100%;
   display: flex;
@@ -40,14 +82,18 @@ const Section = styled.section`
   text-align: center;
   font-family: "Poppins";
 `;
+
 const H2 = styled.h2`
   font-size: 1.6rem;
   font-weight: 500;
+  text-decoration: none !important;
 `;
+
 const Img = styled.img`
   width: 30%;
   margin-top: 15%;
 `;
+
 export const CardBody = ({ title, icon }) => {
   let imgSource;
   if (icon === "iconProject") {
@@ -91,7 +137,6 @@ export const CardComponent = ({ children }) => {
   );
 };
 
-// Props
 CardBody.propTypes = {
   title: PropTypes.string.isRequired,
   icon: PropTypes.oneOf(['iconProject', 'iconProjectsMenu']).isRequired,

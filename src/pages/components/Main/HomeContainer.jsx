@@ -3,12 +3,49 @@ import Waves from "../../../assets/Waves"
 import notepad from "../../../assets/notepad.webp"
 import { useNavigate } from "react-router-dom"
 
-const ContainerInicio= styled.div`
+const breakpoints = {
+  xsm: "376px",
+  sm: "576px",  // móviles horizontales / tablets pequeñas
+  md: "768px",  // tablets verticales
+  lg: "905px",  // laptops pequeñas
+  xl: "1200px", // pantallas grandes
+  xxl: "1400px", // TVs/monitores extra grandes
+};
+
+const ContainerInicio = styled.div`
 width: 100%;
 height: 85%;
 // background: linear-gradient(90deg, rgba(251,120,80,1) 0%, rgba(242,179,50,1) 100%);
 max-width: 100%;
-padding-top: 8% !important;   
+padding-top: 8% !important;
+
+/* Mobile First (estilo base para móviles) */
+  
+  @media (min-width: ${breakpoints.xsm}) {
+    
+  }
+
+  @media (min-width: ${breakpoints.sm}) {  
+    
+  }
+
+  /* Tablet (≥ 768px) */
+  @media (min-width: ${breakpoints.md}) {
+  
+  }
+
+  /* Desktop (≥ 905px) */
+  @media (min-width: ${breakpoints.lg}) {
+     
+  }
+  
+  @media (min-width: ${breakpoints.xl}) {
+    
+  }
+
+  @media (min-width: ${breakpoints.xxl}) {
+    
+  }
 `
 
 const ContainerTitle = styled.div`
@@ -45,28 +82,28 @@ const ButtonFirst = styled.button`
 `
 
 const HomeContainer = () => {
-    const navigate = useNavigate()
-  
-    const handlerNavigate = () => {
-      navigate("Projects-menu")
-    }
+  const navigate = useNavigate()
+
+  const handlerNavigate = () => {
+    navigate("Projects-menu")
+  }
   return (
     <ContainerInicio className="container-title">
-        <ContainerTitle>
-          <h1 className="font">Efficient Notes</h1>
-          <h2 className="subtitles">
+      <ContainerTitle>
+        <h1 className="font">Efficient Notes</h1>
+        <h2 className="subtitles">
           Boost ideas, get powerful performance by getting organized
-            <ul className="ul">
-              <li>A note inside a folder in a project</li>
-              <li>Unlimited and sorted by priority</li>
-              <li>maximum visual feedback thanks to the structure</li>
-            </ul>
-            <ButtonFirst type="button" onClick={handlerNavigate}>Create a project</ButtonFirst>
-          </h2>
-        </ContainerTitle>
-        <img src={notepad} className="notepadImg" />
-        <Waves />
-      </ContainerInicio>
+          <ul className="ul">
+            <li>A note inside a folder in a project</li>
+            <li>Unlimited and sorted by priority</li>
+            <li>maximum visual feedback thanks to the structure</li>
+          </ul>
+          <ButtonFirst type="button" onClick={handlerNavigate}>Create a project</ButtonFirst>
+        </h2>
+      </ContainerTitle>
+      <img src={notepad} className="notepadImg" />
+      <Waves />
+    </ContainerInicio>
   )
 }
 
