@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import "../../../styles/components/main/main.css";
 import LumiaLogo from "../../../assets/lumia_pina.png"
+import CardsContainer from "./CardsContainer";
+import EditorVideo from "./EditorVideo";
 
 const breakpoints = {
   xsm: "376px",
@@ -20,7 +22,7 @@ const ContainerInicio = styled.div`
   padding-top: 8% !important;
   display: flex;
   justify-content: center;
-  
+  align-items: center;
   &::before {
     content: "";
     position: absolute;
@@ -46,7 +48,7 @@ const ContainerInicio = styled.div`
 
 const ContainerTitle = styled.div`
   width: 80%;
-  margin-top: 11.5%;
+  margin-top: -5%;
   display: flex;
   font-family: "rubik";
   flex-direction: column;
@@ -55,19 +57,6 @@ const ContainerTitle = styled.div`
   text-align: center;
   cursor: default;
   user-select: none;
-  
-  @media (min-width: 375px) and (max-width: 430px) {
-    margin-top: 28%;
-    width: 86%;
-    height: 500px;
-    line-height: 3;
-  }
-
-  @media (min-width: 300px) and (max-width: 374px) {
-    margin-top: 20%;
-    width: 80%;
-    height: 500px;
-  }
 `;
 
 const Title = styled.h1`
@@ -87,28 +76,17 @@ const Title = styled.h1`
 `;
 
 const Subtitle = styled.h2`
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: #191918;
-
-  @media (min-width: 375px) and (max-width: 430px) {
-    font-size: 1.3rem;
-  }
-
-  @media (min-width: 300px) and (max-width: 550px) {
-    margin-top: 1rem;
-  }
+  margin-top: -8px !important;
 `;
 
 const ButtonFirst = styled.button`
-  color: black;
-  width: 200px;
-  height: 60px;
+  height: 57px;
   font-size: 1.2rem;
   color: #075C5B;
-  border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
-  margin-top: 1.5rem;
   background-color: #32E6E2;
   text-align: center;
   text-decoration: none;
@@ -116,124 +94,158 @@ const ButtonFirst = styled.button`
   justify-content: center;
   align-items: center;
   line-height: 0;
-  
+  border-color: #fff0;
   &:hover{     
-  }
-
+    }
   &:active{      
   }
-
   /* Mobile First (estilo base para móviles) */
   @media (min-width: ${breakpoints.xsm}) {
-    width: 200px;
-    height: 40px;
+    width: 330px;
+    height: 50px;
     font-size: 1rem;
-    margin-top: 2.3rem !important;
   }
 
   @media (min-width: ${breakpoints.sm}) { 
-    width: 200px;
     height: 40px;
     font-size: 1rem;
-    margin-top: 2.3rem !important;
   }
 
   /* Tablet (≥ 768px) */
   @media (min-width: ${breakpoints.md}) {
   
+    height: 40px;
+    font-size: 1rem;
   }
 
   /* Desktop (≥ 905px) */
   @media (min-width: ${breakpoints.lg}) {
-    width: 200px;
-    height: 60px;
-    font-size: 1rem;
-    margin-top: 2.3rem !important; 
+    color: black;
+    width: 195px;
+    height: 57px;
+    font-size: 1.2rem;
+    color: #075C5B;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px !important;
+    
+    background-color: #32E6E2;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+    border-color: #fff0;
   }
   
   @media (min-width: ${breakpoints.xl}) {
-    
+    color: black;
+    width: 195px;
+    height: 57px;
+    font-size: 1.2rem;
+    color: #075C5B;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #32E6E2;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+    border-color: #fff0;
   }
 
   @media (min-width: ${breakpoints.xxl}) {
-    
+    color: black;
+    width: 195px;
+    height: 55px;
+    font-size: 1.2rem;
+    color: #075C5B;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    background-color: #32E6E2;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+    border-color: #fff0;  
   }
 
 `;
 
-const CarruselContainer = styled.div`
-  height: 350px;
-  width: 100%;
-  background-color: #12181F;
-  position: relative;
-  top: 100%;
-  
-  @media (min-width: 375px) and (max-width: 430px) {
-    height: 220px;
-  }
-
-  @media (min-width: 300px) and (max-width: 550px) {
-  }
-`
 
 const ContainerEditor = styled.div`
   display: flex;
-  width: 1250px;
-  height: 470px;
+  min-width: 1270px;
+  min-height: 1300px;
   background-color: white;
   position: relative;
   align-items: center;
   justify-content: center;
-  top: -250%;
-  left: 8.5%;
-  border: 1px solid #0000001a;
+  border: 1px solid #00000080;
   border-radius: 1rem;
   box-shadow: 0px 20px 50px #00000014,0px 6px 16px #0000000a;
-
   /* Mobile First (estilo base para móviles) */
   @media (min-width: ${breakpoints.xsm}) {
-    
+    width: 350px;
+    top: -100%;
+    background-color: #ccc;
   }
-
-  @media (min-width: ${breakpoints.sm}) { 
-
-    
-  }
-
-  /* Tablet (≥ 768px) */
-  @media (min-width: ${breakpoints.md}) {
   
+  @media (min-width: ${breakpoints.sm}) { 
+    width: 350px;
+    }
+    
+    /* Tablet (≥ 768px) */
+  @media (min-width: ${breakpoints.md}) {
+    width: 300px;
   }
 
   /* Desktop (≥ 905px) */
   @media (min-width: ${breakpoints.lg}) {
-  width: 850px;
-  left: 7.4%;
-  top: -234%;
+    width: 850px !important;
+    min-height: 470px;
+    top: -4%;
+    left: 9% !important;
+    display: flex;
+    height: 470px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #0000001a;
+    z-index: 10000000000000000;
+    border-radius: 1rem;
+    background-color: #ccc;
+    box-shadow: 0px 20px 50px #0000002e,0px 6px 16px #0000000a;
   }
   
   @media (min-width: ${breakpoints.xl}) {
+    width: 850px;
+    min-height: 470px;
+    left: 17%;
     display: flex;
-    width: 1250px;
     height: 470px;
     background-color: white;
     position: relative;
     align-items: center;
     justify-content: center;
-    top: -250%;
-    left: 8.5%;
     border: 1px solid #0000001a;
+    z-index: 10000000000000000;
     border-radius: 1rem;
     box-shadow: 0px 20px 50px #00000014,0px 6px 16px #0000000a;
-  }
-
-  @media (min-width: ${breakpoints.xxl}) {
+    }
     
+    @media (min-width: ${breakpoints.xxl}) {
+      
   }
+`
 
-  `
-
-const EditorExample = styled.div`
+const EditorExample = styled.video`
   display: flex;  
   width: 870px;
   height: 440px;
@@ -252,22 +264,26 @@ const LogoLumiaPina = styled.div`
   background: url("../../../assets/lumia_pina.png");
 `
 
+const CarruselContainer = styled.div`
+  width: 100%;
+  background-color: #fdcfffff;
+  position: relative;
+  top: 35%;
+`
+
 const TextSection = styled.div`
   background-color: #12181F;
-  height: 140px;
+  height: 10vh;
   display: flex;
   position: absolute;
-  top: 10%;
   width: 100%;
   justify-content: center;
   font-size: 3rem;
   text-align: center;
   color: white;
 `
-
 const MainContainer = () => {
   const navigate = useNavigate();
-
   const handlerNavigate = () => {
     navigate("Projects-menu");
   };
@@ -285,13 +301,13 @@ const MainContainer = () => {
           </ButtonFirst>
         </ContainerTitle>
       </ContainerInicio>
+      <ContainerEditor>
+        <EditorVideo
+          src="../../../../public/notion-example-video.mp4"
+        />
+      </ContainerEditor>
       <CarruselContainer>
-        <ContainerEditor>
-          <EditorExample />
-        </ContainerEditor>
-        <TextSection>
-          One Platform
-        </TextSection>
+        <CardsContainer />
       </CarruselContainer>
     </>
   );
