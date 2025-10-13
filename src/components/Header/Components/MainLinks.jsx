@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import ButtonFirst from "../../../pages/components/Main/ButtonFirst";
 
 const breakpoints = {
   xsm: "376px",
@@ -149,6 +150,12 @@ export default function LinksIndex({ mainRoute }) {
           >
             Folders
           </Links>
+          <ButtonFirst
+            width="130px"
+            height="50px"
+            color="#059693ff"
+            backgroundColor="#1bfcdaff"
+          />
         </LinksContent>
       </LinksContainer>
       <ToggleContent>
