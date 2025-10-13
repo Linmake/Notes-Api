@@ -89,8 +89,8 @@ const StyledButton = styled.button`
 
   @media (min-width: ${breakpoints.xxl}) {
     color: ${props => props.color || '#075C5B'};
-    width: ${props => props.width || '195px'};
-    height: ${props => props.xxlHeight || '55px'};
+    width: ${props => props.width || '200px'};
+    height: ${props => props.xxlHeight || '50px'};
     font-size: 1.2rem;
     border-radius: 6px;
     cursor: pointer;

@@ -1,6 +1,5 @@
 import MainContainer from '../components/Main/MainContainer';
 import MainHeader from '../../components/Header/MainHeader';
-import CardsContainer from '../components/Main/CardsContainer';
 
 const MainPage = () => {
   return (
@@ -10,5 +9,4 @@ const MainPage = () => {
     </> 
   )
 }
-
 export default MainPage

@@ -25,7 +25,6 @@ const Header = styled.nav`
   top: 0;
   z-index: 10000000;
   background-color: #fff;
-
   /* Mobile First (estilo base para móviles) */
   @media (min-width: ${breakpoints.xsm}) {
   }

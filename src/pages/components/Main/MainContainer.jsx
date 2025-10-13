@@ -113,8 +113,6 @@ const ContainerTitle = styled.div`
   cursor: default;
   user-select: none;
   }
-
-
 `;
 
 const Title = styled.h1`
@@ -156,8 +154,6 @@ const Title = styled.h1`
   @media (min-width: ${breakpoints.xxl}) {
     
   }
-
-
 `;
 
 const Subtitle = styled.h2`
@@ -205,66 +201,67 @@ const Subtitle = styled.h2`
 
 const ContainerEditor = styled.div`
   position: relative;
+  width: 800px;
+  height: 2000px;
+  top: -4%;
+
   @media (min-width: ${breakpoints.xsm}) {
     width: 380px;
+    height: 1500px;
     top: -10%;
     left: 5%;
   }
   
   @media (min-width: ${breakpoints.sm}) { 
     width: 400px;
+    height: 500px;
   }
     
   /* Tablet (≥ 768px) */
   @media (min-width: ${breakpoints.md}) {
     width: 300px;
+    height: 1500px;
   }
 
   /* Desktop (≥ 905px) */
   @media (min-width: ${breakpoints.lg}) {
     width: 800px;
-    height: 470px;
-    top: -4%;
+    height: 1000px;
+    top: -25%;
     left: 9% !important;
     display: flex;
-    height: 470px;
     position: relative;
     align-items: center;
     justify-content: center;
-    border: 1px solid #0000001a;
     z-index: 10000000000000000;
     border-radius: 1rem;
-    background-color: #ccc;
-    box-shadow: 0px 20px 50px #0000002e,0px 6px 16px #0000000a;
+    box-shadow: 0px 20px 50px #00000079,0px 6px 16px #00000045;
   }
   
   @media (min-width: ${breakpoints.xl}) {
     width: 1270px;
-    height: 470px;
+    height: 870px;
     left: 17%;
     display: flex;
-    height: 470px;
     background-color: white;
     position: relative;
     align-items: center;
     justify-content: center;
-    border: 1px solid #0000001a;
     z-index: 10000000000000000;
+    border: 2px solid #00000014;;
     border-radius: 1rem;
     box-shadow: 0px 20px 50px #00000014,0px 6px 16px #0000000a;
     }
     
     @media (min-width: ${breakpoints.xxl}) {
     width: 1270px;
-    height: 470px;
+    height: 800px;
     left: 17%;
     display: flex;
-    height: 470px;
     background-color: white;
     position: relative;
     align-items: center;
     justify-content: center;
-    border: 1px solid #0000001a;
     z-index: 10000000000000000;
     border-radius: 1rem;
     box-shadow: 0px 20px 50px #00000014,0px 6px 16px #0000000a;
@@ -273,7 +270,6 @@ const ContainerEditor = styled.div`
 
 const CarruselContainer = styled.div`
   width: 100%;
-  background-color: #fdcfffff;
   position: relative;
   top: 35%;
 `
@@ -294,13 +290,13 @@ const MainContainer = () => {
     <>
       <ContainerInicio className="container-title">
         <ContainerTitle>
-        <img src={catsline} />
-          
+          <img src={catsline} />
+
           <Title className="font text">Inserta tus ideas en la nube</Title>
           <Subtitle className="text">
             Notas potenciadas con Agentes de AI, de la forma mas rapida crea mapas y recursos visuales.
           </Subtitle>
-          <ButtonFirst />
+          <ButtonFirst/>
         </ContainerTitle>
       </ContainerInicio>
       <ContainerEditor>

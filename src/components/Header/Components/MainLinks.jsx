@@ -151,8 +151,8 @@ export default function LinksIndex({ mainRoute }) {
             Folders
           </Links>
           <ButtonFirst
-            width="130px"
-            height="50px"
+            width="120px"
+            xxlHeight="40px"
             color="#059693ff"
             backgroundColor="#1bfcdaff"
           />

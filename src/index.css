@@ -3,7 +3,7 @@ body {
   margin: 0;
   display: flex;
   /* background: url("./assets/paven_1.webp"); */
-  background-color: #212121;
+  background-color: white;
 }
 *,
 *::before,
