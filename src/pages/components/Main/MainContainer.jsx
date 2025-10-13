@@ -65,7 +65,7 @@ const ContainerTitle = styled.div`
   }
 
   @media (min-width: ${breakpoints.sm}) { 
-
+  margin-top: 2%;
     
   }
 
@@ -76,15 +76,42 @@ const ContainerTitle = styled.div`
 
   /* Desktop (≥ 905px) */
   @media (min-width: ${breakpoints.lg}) {
-  
+    width: 80%;
+  margin-top: -15%;
+  display: flex;
+  font-family: "rubik";
+  flex-direction: column;
+  color: #191918;
+  align-items: center;
+  text-align: center;
+  cursor: default;
+  user-select: none;
   }
   
   @media (min-width: ${breakpoints.xl}) {
-    
+    width: 80%;
+  margin-top: -15%;
+  display: flex;
+  font-family: "rubik";
+  flex-direction: column;
+  color: #191918;
+  align-items: center;
+  text-align: center;
+  cursor: default;
+  user-select: none;
   }
 
   @media (min-width: ${breakpoints.xxl}) {
-    
+    width: 80%;
+  margin-top: -15%;
+  display: flex;
+  font-family: "rubik";
+  flex-direction: column;
+  color: #191918;
+  align-items: center;
+  text-align: center;
+  cursor: default;
+  user-select: none;
   }
 
 
@@ -155,15 +182,21 @@ const Subtitle = styled.h2`
 
   /* Desktop (≥ 905px) */
   @media (min-width: ${breakpoints.lg}) {
-  
+    font-size: 1.3rem;
+  color: #191918;
+  margin-top: -8px;
   }
   
   @media (min-width: ${breakpoints.xl}) {
-    
+    font-size: 1.3rem;
+  color: #191918;
+  margin-top: -8px;
   }
 
   @media (min-width: ${breakpoints.xxl}) {
-    
+    font-size: 1.3rem;
+  color: #191918;
+  margin-top: -8px;
   }
 
 
