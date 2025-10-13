@@ -11,9 +11,8 @@ const breakpoints = {
 };
 
 const StyledButton = styled.button`
-  font-size: 1.2rem;
   color: ${props => props.color || '#075C5B'};
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   background-color: ${props => props.backgroundColor || '#32E6E2'};
   text-align: center;
@@ -23,10 +22,6 @@ const StyledButton = styled.button`
   align-items: center;
   line-height: 0;
   border-color: #fff0;
-  
-  /* Dimensiones por defecto */
-  width: ${props => props.width || '195px'};
-  height: ${props => props.height || '57px'};
   
   &:hover{     
     /* Agrega tus estilos hover aquí */
@@ -38,19 +33,21 @@ const StyledButton = styled.button`
   
   /* Mobile First (estilo base para móviles) */
   @media (min-width: ${breakpoints.xsm}) {
-    width: ${props => props.mobileWidth || '330px'};
-    height: ${props => props.mobileHeight || '50px'};
+    width: ${props => props.mobileWidth || '400px'};
+    height: ${props => props.mobileHeight || '47px'};
     font-size: 1rem;
   }
 
   @media (min-width: ${breakpoints.sm}) { 
-    height: ${props => props.smallHeight || '40px'};
+    width: ${props => props.mobileWidth || '400px'};
+    height: ${props => props.mobileHeight || '47px'};
     font-size: 1rem;
   }
 
   /* Tablet (≥ 768px) */
   @media (min-width: ${breakpoints.md}) {
-    height: ${props => props.tabletHeight || '40px'};
+    width: ${props => props.mobileWidth || '400px'};
+    height: ${props => props.mobileHeight || '47px'};
     font-size: 1rem;
   }
 

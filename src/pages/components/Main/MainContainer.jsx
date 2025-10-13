@@ -59,6 +59,35 @@ const ContainerTitle = styled.div`
   text-align: center;
   cursor: default;
   user-select: none;
+
+  @media (min-width: ${breakpoints.xsm}) {
+    margin-top: 2%;
+  }
+
+  @media (min-width: ${breakpoints.sm}) { 
+
+    
+  }
+
+  /* Tablet (≥ 768px) */
+  @media (min-width: ${breakpoints.md}) {
+  
+  }
+
+  /* Desktop (≥ 905px) */
+  @media (min-width: ${breakpoints.lg}) {
+  
+  }
+  
+  @media (min-width: ${breakpoints.xl}) {
+    
+  }
+
+  @media (min-width: ${breakpoints.xxl}) {
+    
+  }
+
+
 `;
 
 const Title = styled.h1`
@@ -71,50 +100,97 @@ const Title = styled.h1`
     transform: scale(0.95);
   }
 
-  @media (min-width: 300px) and (max-width: 550px) {
+  @media (min-width: ${breakpoints.xsm}) {
+    font-size: 40px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  @media (min-width: ${breakpoints.sm}) { 
     font-size: 40px;
     text-align: center;
   }
+
+  /* Tablet (≥ 768px) */
+  @media (min-width: ${breakpoints.md}) {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  /* Desktop (≥ 905px) */
+  @media (min-width: ${breakpoints.lg}) {
+  
+  }
+  
+  @media (min-width: ${breakpoints.xl}) {
+    
+  }
+
+  @media (min-width: ${breakpoints.xxl}) {
+    
+  }
+
+
 `;
 
 const Subtitle = styled.h2`
   font-size: 1.3rem;
   color: #191918;
-  margin-top: -8px !important;
-`;
+  margin-top: -8px;
 
-
-const ContainerEditor = styled.div`
-  display: flex;
-  min-width: 1270px;
-  min-height: 1300px;
-  background-color: white;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #00000080;
-  border-radius: 1rem;
-  box-shadow: 0px 20px 50px #00000014,0px 6px 16px #0000000a;
-  /* Mobile First (estilo base para móviles) */
-  @media (min-width: ${breakpoints.xsm}) {
-    width: 350px;
-    top: -100%;
-    background-color: #ccc;
+   @media (min-width: ${breakpoints.xsm}) {
+    font-size: 1rem;
+    margin-top: 0px;
   }
-  
+
   @media (min-width: ${breakpoints.sm}) { 
-    min-width: 350px;
-    }
-    
-    /* Tablet (≥ 768px) */
+  font-size: 1rem;
+  margin-top: -25px;
+  }
+
+  /* Tablet (≥ 768px) */
   @media (min-width: ${breakpoints.md}) {
-    min-width: 300px;
+  
   }
 
   /* Desktop (≥ 905px) */
   @media (min-width: ${breakpoints.lg}) {
-    min-width: 800px;
-    min-height: 470px;
+  
+  }
+  
+  @media (min-width: ${breakpoints.xl}) {
+    
+  }
+
+  @media (min-width: ${breakpoints.xxl}) {
+    
+  }
+
+
+`;
+
+
+const ContainerEditor = styled.div`
+  position: relative;
+  @media (min-width: ${breakpoints.xsm}) {
+    width: 380px;
+    top: -10%;
+    left: 5%;
+  }
+  
+  @media (min-width: ${breakpoints.sm}) { 
+    width: 400px;
+  }
+    
+  /* Tablet (≥ 768px) */
+  @media (min-width: ${breakpoints.md}) {
+    width: 300px;
+  }
+
+  /* Desktop (≥ 905px) */
+  @media (min-width: ${breakpoints.lg}) {
+    width: 800px;
+    height: 470px;
     top: -4%;
     left: 9% !important;
     display: flex;
@@ -130,8 +206,8 @@ const ContainerEditor = styled.div`
   }
   
   @media (min-width: ${breakpoints.xl}) {
-    min-width: 1270px;
-    min-height: 470px;
+    width: 1270px;
+    height: 470px;
     left: 17%;
     display: flex;
     height: 470px;
@@ -146,8 +222,8 @@ const ContainerEditor = styled.div`
     }
     
     @media (min-width: ${breakpoints.xxl}) {
-    min-width: 1270px;
-    min-height: 470px;
+    width: 1270px;
+    height: 470px;
     left: 17%;
     display: flex;
     height: 470px;
@@ -160,25 +236,6 @@ const ContainerEditor = styled.div`
     border-radius: 1rem;
     box-shadow: 0px 20px 50px #00000014,0px 6px 16px #0000000a;
   }
-`
-
-const EditorExample = styled.video`
-  display: flex;  
-  width: 870px;
-  height: 440px;
-  z-index: 120;
-  background-color: white;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  border-radius: 1rem;
-`
-
-const LogoLumiaPina = styled.div`
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background: url("../../../assets/lumia_pina.png");
 `
 
 const CarruselContainer = styled.div`
