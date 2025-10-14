@@ -15,19 +15,19 @@ import PwdAccount from './components/Account/SignUp/PwdAccount'
 import EmailSignup from './components/Account/SignUp/EmailSignup'
 import NameAccount from './components/Account/SignUp/NameAccount';
 import SettingsAccountPage from './pages/SettingsAccount/SettingsAccountPage';
-import ProfilePage from './pages/Account/ProfilePage';
+import DashboardPage from './pages/Account/DashboardPage';
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element={<RootLayout/>}>
         <Route index element={<MainPage/>} />
-        <Route exact path='/Projects-menu/' element={<ProfilePage />} /*loader={ProjectsLoader}*/ />
+        <Route exact path='/Projects-menu/' element={<DashboardPage />} /*loader={ProjectsLoader}*/ />
         <Route exact path='/Folders/' element={<a />} />
         <Route exact path='/*' element={<NotFound/>} />
       <Route path='/Project/:projectId' element={<TextEditor />}>
       </Route>
       <Route path='Account' element={<UsersLayout />}>
-        <Route index path='profile' element={<ProfilePage />} />
+        <Route index path='profile' element={<DashboardPage />} />
         <Route path='signup' element={<SignupLayout />}>
           <Route path='email' element={<EmailSignup />}/>
           <Route path='email/pwd' element={<PwdAccount />}/>

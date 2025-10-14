@@ -9,10 +9,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 
 const Container = styled.li`
-
- width: 420px;
+ width: 600px;
  box-sizing: border-box;
-  height: 260px;
+  height: 350px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -95,14 +94,15 @@ const MenuIcon = styled(FontAwesomeIcon)`
 
 
 const ProjectContainer = styled.div`
-    width: 420px;
+    width: 80%;
     box-sizing: border-box;
-    height: 260px;
+    height: 350px;
     background-color: white;
     display: flex;
     flex-direction: column;
     border-radius: 10px;
     padding: 1rem;
+    overflow: hidden;
     
     box-shadow: rgba(222, 222, 222, 0.4) 0px 2px 15px 0px, rgba(222, 222, 222, 0.4) 0px 1px 5px 0px;
     `
@@ -230,6 +230,16 @@ const Project = ({ Title, Id }) => {
             onClick={(e) => goToProject(Id)}
             ref={refInput}
           />
+        <ContainerOptions>
+          <MenuIcon title="Options" icon={faEllipsis} onClick={(e) => handlerOptsMenu(e)} />
+          {(optsMenu) ?
+            (
+              <ContainerMenu ref={refMenuContainer}>
+                <EditIcon title="Edit" icon={faPenToSquare} onClick={(e) => handlerEdit(e)} />
+                <DeleteIcon title="Delete" icon={faTrashAlt} onClick={(e) => handlerDelete(e)} />
+              </ContainerMenu>
+            ) : (<></>)}
+        </ContainerOptions>
         </ProjectContainer>
       ) : (
         <EditProjectInput
@@ -240,16 +250,6 @@ const Project = ({ Title, Id }) => {
           onBlur={e => handlerOnBlur(e)}
         />
       )}
-      <ContainerOptions>
-        <MenuIcon title="Options" icon={faEllipsis} onClick={(e) => handlerOptsMenu(e)} />
-        {(optsMenu) ?
-          (
-            <ContainerMenu ref={refMenuContainer}>
-              <EditIcon title="Edit" icon={faPenToSquare} onClick={(e) => handlerEdit(e)} />
-              <DeleteIcon title="Delete" icon={faTrashAlt} onClick={(e) => handlerDelete(e)} />
-            </ContainerMenu>
-          ) : (<></>)}
-      </ContainerOptions>
     </Container>
   );
 };

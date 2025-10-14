@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { UseData } from "../../context/dataContext";
 import BoardListComponent from "./Components/BoardList";
 import { positionSideContext } from "../../context/SideProv";
@@ -9,8 +9,7 @@ import SettingsBoard from "./Components/SettingsBoard";
 import TagsBanner from "./Components/TagsBanner";
 import Display from "./Components/Display";
 import Profile from "./Components/Profile";
-import Search from "./Components/Search";
-import { NewProjectTab } from "../../components/Project/NewProjectTab";
+import CreateProyectComponent from "./Components/CreateProyectComponent";
 
 const Container = styled.div`
   display: flex;
@@ -58,19 +57,48 @@ const MainCore = styled.div`
   background-color: #FDFDFD;
 `
 
+const StyledScroll = css`
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 3rem;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+    border-radius: 3px;
+    
+    &:hover {
+      background: linear-gradient(180deg, #5a6fd8 0%, #6a4190 100%);
+    }
+  }
+
+  /* Para Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #d3d6e6ff transparent;
+`;
+
 const ProjectsContent = styled.div`
-  max-width: 1300px;
+  max-width: 900px;
   border-radius: 0.3rem;
-  height: 620px;
-  align-items: center; 
+  height: 1200px;
+  align-items: center;
   background-color: transparent;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 5rem;
   overflow-y: auto;
+  margin-top: 7%;
 `
 
-const ProfilePage = () => {
+const ScrollableContent = styled.div`
+  height: 100%;
+  overflow-y: auto;
+  ${StyledScroll}
+`;
+
+const DashboardPage = () => {
   const [cookie, setCookie] = useState(null);
   const { projects, setProjects } = useContext(positionSideContext);
   const { setData, setProject } = UseData();
@@ -93,16 +121,16 @@ const ProfilePage = () => {
       <ParentContent>
         <Onboard>
           <BoardListComponent />
-          <SettingsBoard/>
+          <SettingsBoard />
         </Onboard>
         <MainCore>
-          <Search/>
-          <TagsBanner/>
-          <Display/>
+          <CreateProyectComponent />
           <ProjectsContent>
-            {projects.map((project, index) => (
-                  <Project Title={project.Title} Id={project.Id} key={index} />
-                   ))}
+            <ScrollableContent>
+              {projects.map((project, index) => (
+                <Project Title={project.Title} Id={project.Id} key={index} />
+              ))}
+            </ScrollableContent>
           </ProjectsContent>
         </MainCore>
         <Profile />
@@ -110,4 +138,4 @@ const ProfilePage = () => {
     </Container>
   );
 };
-export default ProfilePage;
+export default DashboardPage;

@@ -39,7 +39,7 @@ const Button = styled.button`
   height: 50px;
 `;
 
-const Search = () => {
+const CreateProyectComponent = () => {
   const refName = useRef(null);
   const { setProjects } = useContext(positionSideContext);
 
@@ -85,4 +85,4 @@ const Search = () => {
   )
 }
 
-export default Search
+export default CreateProyectComponent
