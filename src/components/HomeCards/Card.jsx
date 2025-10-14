@@ -20,8 +20,10 @@ const Article = styled.article`
   box-shadow: 0px 0px 4px rgba(131, 131, 131, 0.822);
   border: 2px solid rgb(255, 255, 255);
   background-color: #FFF;
-  padding: 1%;
   border-radius: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
   &:hover {
     cursor: pointer;
@@ -59,7 +61,8 @@ const Article = styled.article`
 
 /* Desktop (≥ 905px) */
   @media (min-width: ${breakpoints.lg}) {
-    width: 250px;
+    width: 1245px;
+    height: 575px;
   }
 
   @media (min-width: ${breakpoints.xl}) {
@@ -77,8 +80,6 @@ const Section = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 10%;
-  padding: 1rem;
   text-align: center;
   font-family: "Poppins";
 `;
@@ -90,7 +91,7 @@ const H2 = styled.h2`
 `;
 
 const Img = styled.img`
-  width: 30%;
+  width: 10%;
   margin-top: 15%;
 `;
 

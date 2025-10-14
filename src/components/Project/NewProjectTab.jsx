@@ -17,8 +17,13 @@ const Form = styled.div`
 `;
 
 const Input = styled.input`
-  width: 18vw;
-  font-size: 1.5rem;
+  width: 1250px;
+  height: 100%;
+  margin: 0;
+  border: 1px solid #D6D6D6;
+  border-radius: 10px;
+  outline: none;
+  padding-left: 1rem;
 `;
 
 const Button = styled.button`
@@ -29,8 +34,6 @@ const Button = styled.button`
 export const NewProjectTab = () => {
   const refName = useRef(null);
   const { setProjects } = useContext(positionSideContext);
-  
-
 
   const handlerEnt = (event) => {
     if (event.keyCode !== 13) {

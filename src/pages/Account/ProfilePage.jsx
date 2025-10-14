@@ -10,6 +10,7 @@ import TagsBanner from "./Components/TagsBanner";
 import Display from "./Components/Display";
 import Profile from "./Components/Profile";
 import Search from "./Components/Search";
+import { NewProjectTab } from "../../components/Project/NewProjectTab";
 
 const Container = styled.div`
   display: flex;
